@@ -67,6 +67,7 @@ VPC DNS Configuration
 - Configured a dedicated Security Group for secure compute resources following the principle of least privilege.
 - Created and associated a Network ACL with the private subnet to provide an additional layer of network protection.
 - Enabled VPC DNS Resolution and DNS Hostnames to support private DNS functionality required by AWS managed services and Interface VPC Endpoints.
+- Created a dedicated private route table and associated it with the private subnet to isolate internal network traffic.
 
 ---
 
@@ -99,3 +100,4 @@ Successfully deployed a secure enterprise cloud network foundation with network 
 - Proper route table configuration determines whether a subnet is public or private.
 - VPC DNS Resolution and DNS Hostnames are required for private DNS functionality and secure communication with AWS managed services.
 - Building the network foundation before deploying compute resources simplifies future security implementation and aligns with enterprise cloud architecture best practices.
+- Using separate route tables for public and private subnets improves network isolation and follows enterprise cloud networking best practices.
