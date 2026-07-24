@@ -10,8 +10,8 @@ Applied enterprise Linux security hardening practices to an Ubuntu Server runnin
 
 - Establish a secure Linux baseline
 - Verify operating system information
-- Update installed packages
-- Prepare the server for security hardening
+- Apply enterprise Linux security hardening controls
+- Validate host security configuration
 
 ---
 
@@ -31,9 +31,15 @@ Applied enterprise Linux security hardening practices to an Ubuntu Server runnin
 AWS Systems Manager
         │
         ▼
-Amazon EC2 (Ubuntu Server 24.04)
+Private Amazon EC2
+(Ubuntu Server 24.04 LTS)
         │
-Linux Security Hardening
+ ├── SSH Hardening
+ ├── UFW Firewall
+ ├── Authentication Security
+ ├── File System Security
+ ├── Kernel Hardening
+ └── System Logging
 ```
 
 ---
@@ -45,8 +51,8 @@ Linux Security Hardening
 - Verified the current session user and working directory.
 - Collected system information, including hostname, Ubuntu version, and kernel version.
 - Reviewed CPU, memory, and disk utilization.
-- Updated package repositories.
-- Upgraded installed packages to the latest available versions.
+- Verified package repository configuration.
+- Collected system information including hostname, Ubuntu version, kernel version, CPU, memory, and disk utilization.
 
 ### User & Authentication Security
 
@@ -92,6 +98,17 @@ Linux Security Hardening
 - Disabled ICMP redirect transmission by configuring the `net.ipv4.conf.all.send_redirects` kernel parameter.
 - Verified active listening ports and network services.
 
+## Security Controls Implemented
+
+- Secure remote administration using AWS Systems Manager
+- SSH hardening
+- UFW host firewall
+- Linux user and authentication review
+- File permission validation
+- Kernel parameter hardening
+- System logging validation
+- Service exposure review
+
 ---
 
 ## Verification
@@ -106,7 +123,7 @@ Linux Security Hardening
 
 ## Result
 
-Successfully applied Linux security hardening controls to an Ubuntu Server hosted in a private AWS subnet.
+Successfully applied enterprise Linux security hardening controls to an Ubuntu Server deployed in a private AWS subnet.
 
 The server now follows enterprise security best practices including secure remote administration through AWS Systems Manager, SSH hardening, host-based firewall protection, file permission validation, kernel security review, and centralized system logging.
 
@@ -117,3 +134,5 @@ The server now follows enterprise security best practices including secure remot
 Linux hardening requires multiple layers of security rather than relying on a single control. Combining secure remote administration, firewall policies, authentication hardening, proper file permissions, kernel security settings, and continuous log monitoring significantly reduces the attack surface of production servers.
 
 Deploying the server in a private subnet with AWS Systems Manager demonstrated how administrative access can be provided without exposing SSH directly to the internet, aligning with enterprise cloud security best practices.
+
+Operating servers inside private subnets improves security by minimizing direct network exposure, but also requires careful planning for software updates and package management.
