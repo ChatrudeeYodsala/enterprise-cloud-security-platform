@@ -53,7 +53,7 @@ Private EC2 Instance
 - Established secure remote administration using AWS Systems Manager Session Manager without requiring a public IP address or SSH access.
 - Verified Amazon CloudWatch basic monitoring for the EC2 instance.
 - Verified AWS CloudTrail recorded infrastructure provisioning events for auditing purposes.
-- Explored AWS Backup service components.
+- Reviewed AWS Backup service components.
 - Reviewed Backup Vaults, Backup Plans, and Recovery Point architecture.
 - Prepared the environment for future backup policy implementation.
 

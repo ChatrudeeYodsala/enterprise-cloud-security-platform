@@ -13,24 +13,30 @@ Implemented AWS identity security baseline using IAM.
 
 ## Environment
 
-AWS IAM
+- AWS IAM
+- AWS Management Console
 
 ## Architecture
 
 Root User
-|
-IAM User
-|
+     │
+     ▼
+ IAM User
+     │
+     ▼
 Administrators Group
-|
+     │
+     ▼
 AdministratorAccess
 
 ## Implementation
 
-- Enabled Root MFA
-- Created IAM user cloud-admin
-- Created Administrator group
-- Enabled IAM User MFA
+- Reviewed Root User security recommendations.
+- Enabled MFA for the Root User.
+- Created an IAM administrator user.
+- Created an Administrators IAM group.
+- Attached the AdministratorAccess managed policy.
+- Enabled MFA for the IAM administrator account.
 
 ## Verification
 
@@ -39,7 +45,7 @@ AdministratorAccess
 
 ## Result
 
-AWS account identity layer secured.
+Successfully established a secure AWS identity management baseline by reducing Root User usage and enforcing MFA for administrative access.
 
 ## Lessons Learned
 

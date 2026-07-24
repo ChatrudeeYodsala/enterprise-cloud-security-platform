@@ -49,7 +49,6 @@ Private Amazon EC2
 ### System Baseline
 
 - Verified the current session user and working directory.
-- Collected system information, including hostname, Ubuntu version, and kernel version.
 - Reviewed CPU, memory, and disk utilization.
 - Verified package repository configuration.
 - Collected system information including hostname, Ubuntu version, kernel version, CPU, memory, and disk utilization.

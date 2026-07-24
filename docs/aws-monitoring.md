@@ -10,9 +10,9 @@ Implemented AWS native monitoring and management capabilities using Amazon Cloud
 
 - Monitor EC2 performance and health
 - Configure CloudWatch alarms
-- Build a centralized monitoring dashboard
-- Manage infrastructure using AWS Systems Manager
-- Improve operational visibility
+- Build centralized monitoring dashboards
+- Manage EC2 instances using AWS Systems Manager
+- Improve operational visibility and infrastructure management
 
 ---
 
@@ -48,7 +48,7 @@ Implemented AWS native monitoring and management capabilities using Amazon Cloud
 
 ### CloudWatch Monitoring
 
-- Reviewed Amazon EC2 performance metrics.
+- Reviewed Amazon EC2 performance metrics including CPU utilization, network traffic, and instance status checks.
 - Verified CPU utilization, network traffic, and instance health metrics.
 - Confirmed EC2 status checks were operating normally.
 
@@ -56,7 +56,7 @@ Implemented AWS native monitoring and management capabilities using Amazon Cloud
 
 - Created a CPU utilization alarm using a static threshold.
 - Configured an EC2 status check alarm to detect infrastructure failures.
-- Verified alarm creation and operational status.
+- Verified alarm configuration and confirmed alarms entered the OK state after deployment.
 
 ### CloudWatch Dashboard
 
@@ -87,7 +87,7 @@ Implemented AWS native monitoring and management capabilities using Amazon Cloud
 
 ## Result
 
-Successfully implemented AWS native monitoring and management capabilities for an enterprise Ubuntu Server hosted in a private subnet.
+Successfully implemented AWS native monitoring using Amazon CloudWatch and AWS Systems Manager.
 
 The monitoring environment now provides centralized operational visibility, infrastructure health monitoring, dashboard visualization, alarming, and secure remote administration without exposing SSH to the public internet.
 
