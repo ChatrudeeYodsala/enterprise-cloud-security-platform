@@ -1,45 +1,29 @@
 #!/bin/bash
 
 echo "========================================="
-echo " Enterprise System Report"
-echo " Generated: $(date)"
+echo " Enterprise Service Status"
 echo "========================================="
 
-echo
-echo "===== System Information ====="
-echo "Hostname: $(hostname)"
-echo "Operating System: $(lsb_release -d 2>/dev/null | cut -f2)"
-echo "Kernel: $(uname -r)"
-echo "Uptime:"
-uptime -p
+SERVICES=(
+    ssh
+    amazon-ssm-agent
+    systemd-journald
+)
 
 echo
-echo "===== Resource Usage ====="
-echo "Memory:"
-free -h
 
-echo
-echo "Disk:"
-df -h /
+for SERVICE in "${SERVICES[@]}"
+do
+    STATUS=$(systemctl is-active "$SERVICE" 2>/dev/null)
 
-echo
-echo "CPU Load:"
-uptime | awk -F'load average:' '{print $2}'
-
-echo
-echo "===== Network ====="
-hostname -I
-
-echo
-echo "Listening Ports:"
-ss -tuln
-
-echo
-echo "===== Services ====="
-printf "%-15s %s\n" "SSH" "$(systemctl is-active ssh)"
-printf "%-15s %s\n" "UFW" "$(sudo ufw status | head -n1)"
+    if [ "$STATUS" = "active" ]; then
+        printf "%-25s : ACTIVE\n" "$SERVICE"
+    else
+        printf "%-25s : INACTIVE\n" "$SERVICE"
+    fi
+done
 
 echo
 echo "========================================="
-echo " Report completed."
+echo " Service status check completed."
 echo "========================================="
