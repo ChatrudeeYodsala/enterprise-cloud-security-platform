@@ -66,3 +66,18 @@ Implemented Bash automation scripts to simplify routine infrastructure administr
 
 - Verified the report displayed current system information.
 - Confirmed infrastructure status could be reviewed from a single report.
+
+---
+
+## Service Status Automation
+
+### Implementation
+
+- Developed a Bash script to verify the operational status of critical Linux services.
+- Monitored SSH, Amazon SSM Agent, and system logging services.
+- Displayed service health in a concise and readable format.
+
+### Verification
+
+- Verified all required services were active.
+- Confirmed the script successfully detected service status.
